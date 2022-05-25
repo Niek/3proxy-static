@@ -1,0 +1,26 @@
+
+name: Build flex container
+
+on:
+  push:
+    branches: main
+  workflow_dispatch:
+
+jobs:
+  run:
+    name: Build and publish
+    runs-on: ubuntu-latest
+    container: alpine:latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+      -
+        name: Build
+        run: ./build.sh
+      -
+        name: Publish binaries
+        uses: actions/upload-artifact@v3
+        with:
+          name: 3proxy
+          path: build/*

@@ -1,0 +1,11 @@
+--- Makefile.Linux.orig
++++ Makefile.Linux
+@@ -14,7 +14,7 @@
+ COUT = -o 
+ LN = $(CC)
+ DCFLAGS = 
+-LDFLAGS = -fPIE -O2 -fno-strict-aliasing -pthread
++LDFLAGS = -fPIE -O2 -fno-strict-aliasing -pthread -static -static-libgcc -static-libstdc++
+ DLFLAGS = -shared
+ DLSUFFICS = .ld.so
+ # -lpthreads may be reuqired on some platforms instead of -pthreads
