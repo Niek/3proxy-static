@@ -1,5 +1,5 @@
 
-name: Build flex container
+name: Build 3proxy binaries
 
 on:
   push:
