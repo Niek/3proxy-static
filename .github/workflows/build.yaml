@@ -19,8 +19,14 @@ jobs:
         name: Build
         run: ./build.sh
       -
-        name: Publish binaries
+        name: Publish as artifact
         uses: actions/upload-artifact@v3
         with:
           name: 3proxy
           path: build/*
+      -
+        name: Publish as release if this is a tagged commit
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: build/*
