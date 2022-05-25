@@ -3,7 +3,6 @@ name: Build 3proxy binaries
 
 on:
   push:
-    branches: main
   workflow_dispatch:
 
 jobs:
